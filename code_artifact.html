@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauti Gift</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: radial-gradient(#f3a683 0.75px, transparent 0.75px), radial-gradient(#f78fb3 0.75px, #faf0f2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            color: #4a4a4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 25px 15px;
+        }
+
+        /* کارت اصلی شیشه‌ای */
+        .card-container {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 28px;
+            padding: 35px 25px;
+            box-shadow: 0 20px 40px rgba(247, 143, 179, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* لوگو با افکت لوکس */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .logo-box {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 10px 25px rgba(229, 80, 120, 0.25);
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #f78fb3, #e55078, #f8a5c2);
+            border-radius: 50%;
+            z-index: 1;
+            opacity: 0.7;
+            filter: blur(4px);
+        }
+
+        /* عنوان و توضیحات */
+        .shop-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2c2c2c;
+            margin-bottom: 6px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ffeaa7;
+            color: #d63031;
+            font-size: 0.75rem;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .shop-bio {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* لیست دکمه‌ها */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            color: #333;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 18px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(229, 80, 120, 0.18);
+        }
+
+        .btn-link .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-link i.icon {
+            font-size: 1.4rem;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        /* استایل اختصاصی هر شبکه اجتماعی */
+        .instagram i.icon { color: #e1306c; background: #fce4ec; }
+        .telegram i.icon { color: #0088cc; background: #e1f5fe; }
+        .eitaa i.icon { color: #e67e22; background: #fef5e7; }
+        .bale i.icon { color: #27ae60; background: #e8f8f5; }
+
+        .arrow-icon {
+            font-size: 0.85rem;
+            color: #bbb;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-link:hover .arrow-icon {
+            transform: translateX(-4px);
+            color: #e55078;
+        }
+
+        /* فوتر */
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .footer-text i {
+            color: #e55078;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- لوگو -->
+        <div class="logo-wrapper">
+            <div class="logo-box">
+                <!-- جایگزینی آدرس تصویر لوگوی فروشگاه -->
+                <img src="photo_2026-10-10_16-12-48.jpg" alt="لوگو فروشگاه آرایشی">
+            </div>
+        </div>
+
+        <!-- عنوان و توضیحات -->
+        <h1 class="shop-title">Beauti Gift</h1>
+        <span class="badge">محصولات اورجینال و باکیفیت</span>
+        <p class="shop-bio">ارائه‌دهنده برترین برندهای آرایشی و مراقبت از پوست<br>ارسال به سراسر کشور 💄✨</p>
+
+        <!-- لینک‌ها -->
+        <div class="links-container">
+            <!-- اینستاگرام -->
+            <a href="https://instagram.com/your_shop" target="_blank" class="btn-link instagram">
+                <div class="btn-content">
+                    <i class="fab fa-instagram icon"></i>
+                    <span>پیج اینستاگرام</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- تلگرام -->
+            <a href="https://t.me/Beautigift2026" target="_blank" class="btn-link telegram">
+                <div class="btn-content">
+                    <i class="fab fa-telegram-plane icon"></i>
+                    <span>کانال تلگرام</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- ایتا -->
+            <a href="https://eitaa.com/Beautigift2026" target="_blank" class="btn-link eitaa">
+                <div class="btn-content">
+                    <i class="fas fa-store icon"></i>
+                    <span>کانال ایتا</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- بله -->
+            <a href="https://ble.ir/Beautigift2026" target="_blank" class="btn-link bale">
+                <div class="btn-content">
+                    <i class="fas fa-comment-dots icon"></i>
+                    <span>کانال بله</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+        </div>
+
+        <!-- فوتر -->
+        <div class="footer-text">
+            طراحی شده با <i class="fas fa-heart"></i> برای شما
+        </div>
+    </div>
+
+</body>
+</html>
